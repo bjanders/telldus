@@ -21,10 +21,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <pthread.h>
+
 
 #ifdef _WINDOWS
 #include <fstream>  // NOLINT(readability/streams)
+#elif !defined(_MACOSX) && !defined(__FreeBSD__)
+#include <pthread.h>
 #endif
 #include <string>
 #include "common/Strings.h"
